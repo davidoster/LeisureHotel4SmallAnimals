@@ -30,6 +30,14 @@ public class UserServiceImpl implements UserService {
     }
 
     public User save(UserRegistrationDto registration){
+        // we can also use the convenient way of BeanUtils...
+        // https://www.appsdeveloperblog.com/dto-to-entity-and-entity-to-dto-conversion/
+        /*
+            User user = new User();
+            BeanUtils.copyProperties(UserRegistrationDto, user, "password", "confirmPassword", "confirmEmail", "terms");
+            user.setPassword(passwordEncoder.encode(registration.getPassword()));
+            user.setRoles(Arrays.asList(new Role("ROLE_USER")));
+        */
         User user = new User();
         user.setFirstName(registration.getFirstName());
         user.setLastName(registration.getLastName());

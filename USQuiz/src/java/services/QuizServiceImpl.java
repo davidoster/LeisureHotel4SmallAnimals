@@ -6,15 +6,19 @@
 package services;
 
 import java.util.HashMap;
-import java.util.List;
 import models.QuizEntry;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author mac
  */
+@Service
 public class QuizServiceImpl implements IQuizService {
     private HashMap<String, QuizEntry> entries;
+    
+//    @Autowired
+//    IQuizService quizService;
     
     public QuizServiceImpl() {
         entries = new HashMap();

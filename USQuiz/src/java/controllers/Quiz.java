@@ -24,7 +24,7 @@ import services.QuizServiceImpl;
 @RequestMapping("/Quiz")
 public class Quiz {
     @Autowired
-    IQuizService quizService;
+    private IQuizService quizService;
     
     public Quiz() {
     
@@ -32,6 +32,7 @@ public class Quiz {
     
     @RequestMapping("/show")
     public String show(ModelMap view) {
+//        IQuizService qs = new QuizServiceImpl();
         QuizEntry entry = quizService.singleQuizEntry("Alabama");
         view.addAttribute("qentry", entry);
         return "quiz";

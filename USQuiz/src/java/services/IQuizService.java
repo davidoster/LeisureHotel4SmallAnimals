@@ -11,6 +11,7 @@ import models.QuizEntry;
  *
  * @author mac
  */
+
 public interface IQuizService {
     QuizEntry singleQuizEntry(String state);
     

@@ -63,6 +63,11 @@ public class QuizEntry {
     public void setBird(String bird) {
         this.bird = bird;
     }
+
+    @Override
+    public String toString() {
+        return "QuizEntry{" + "state=" + state + ", capital=" + capital + ", largestCity=" + largestCity + ", bird=" + bird + ", flower=" + flower + '}';
+    }
     
     
     

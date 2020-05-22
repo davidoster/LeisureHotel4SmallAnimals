@@ -5,7 +5,9 @@
  */
 package controllers;
 
+import java.util.List;
 import models.QuizEntry;
+import models.QuizEntryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -32,10 +34,18 @@ public class Quiz {
     
     @RequestMapping("/show")
     public String show(ModelMap view) {
-//        IQuizService qs = new QuizServiceImpl();
-        QuizEntry entry = quizService.singleQuizEntry("Alabama");
+        IQuizService qs = new QuizServiceImpl();
+        QuizEntryDTO entry = qs.singleQuizEntry("Alabama");
         view.addAttribute("qentry", entry);
         return "quiz";
+    }
+    
+    @RequestMapping("/showall")
+    public String showAll(ModelMap view) {
+        IQuizService qs = new QuizServiceImpl();
+        List<QuizEntryDTO> qdto = qs.multiQuizEntries();
+        view.addAttribute("dtos", qdto);
+        return "quizzes";
     }
     
     

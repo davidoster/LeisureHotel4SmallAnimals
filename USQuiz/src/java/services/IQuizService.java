@@ -5,7 +5,9 @@
  */
 package services;
 
+import java.util.List;
 import models.QuizEntry;
+import models.QuizEntryDTO;
 
 /**
  *
@@ -13,6 +15,7 @@ import models.QuizEntry;
  */
 
 public interface IQuizService {
-    QuizEntry singleQuizEntry(String state);
+    QuizEntryDTO singleQuizEntry(String state);
+    List<QuizEntryDTO> multiQuizEntries();
     
 }

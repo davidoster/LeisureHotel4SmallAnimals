@@ -15,7 +15,7 @@
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.html</url-pattern>
-        <url-pattern>/Quiz/**</url-pattern>
+        <url-pattern>/Quiz/show</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

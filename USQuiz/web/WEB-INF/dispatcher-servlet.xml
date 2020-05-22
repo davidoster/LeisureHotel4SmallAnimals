@@ -20,7 +20,7 @@
         <property name="mappings">
             <props>
                 <prop key="index.html">indexController</prop>
-                <prop key="Quiz/show">quizController</prop>
+                <prop key="Quiz/*">quizController</prop>
             </props>
         </property>
     </bean>

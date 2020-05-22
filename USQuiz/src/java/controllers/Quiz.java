@@ -5,9 +5,14 @@
  */
 package controllers;
 
+import models.QuizEntry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import services.IQuizService;
+import services.QuizServiceImpl;
 
 
 /**
@@ -18,13 +23,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 //@RequestMapping(value="/Quiz", method=RequestMethod.GET)
 @RequestMapping("/Quiz")
 public class Quiz {
+    @Autowired
+    IQuizService quizService;
     
     public Quiz() {
+    
     }
     
     @RequestMapping("/show")
-    public String show() {
-        
+    public String show(ModelMap view) {
+        QuizEntry entry = quizService.singleQuizEntry("Alabama");
+        view.addAttribute("qentry", entry);
         return "quiz";
     }
     
